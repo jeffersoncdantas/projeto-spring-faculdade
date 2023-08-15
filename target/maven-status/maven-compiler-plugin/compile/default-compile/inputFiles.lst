@@ -1,0 +1,10 @@
+/workspace/ps2_springboot_jpa/src/main/java/project/controller/EmpregadoController.java
+/workspace/ps2_springboot_jpa/src/main/java/project/repository/ComputadorRepository.java
+/workspace/ps2_springboot_jpa/src/main/java/project/controller/ComputadorController.java
+/workspace/ps2_springboot_jpa/src/main/java/project/Application.java
+/workspace/ps2_springboot_jpa/src/main/java/project/repository/EmpregadoRepository.java
+/workspace/ps2_springboot_jpa/src/main/java/project/entity/Computador.java
+/workspace/ps2_springboot_jpa/src/main/java/project/repository/JogoRepository.java
+/workspace/ps2_springboot_jpa/src/main/java/project/entity/Jogo.java
+/workspace/ps2_springboot_jpa/src/main/java/project/entity/Empregado.java
+/workspace/ps2_springboot_jpa/src/main/java/project/controller/JogoController.java

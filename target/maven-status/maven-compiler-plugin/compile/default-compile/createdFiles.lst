@@ -1,0 +1,10 @@
+project/controller/JogoController.class
+project/repository/EmpregadoRepository.class
+project/Application.class
+project/entity/Empregado.class
+project/controller/EmpregadoController.class
+project/repository/JogoRepository.class
+project/entity/Jogo.class
+project/controller/ComputadorController.class
+project/entity/Computador.class
+project/repository/ComputadorRepository.class

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Gerenciador</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <main class="content">
+        <div class="transparencia">
+            <section id="landing">
+                <h1>Gestão de torneios e campeonatos para jogos digitais</h1>
+                <ul>
+                    <button id="btnGerenciarJogos">Gerenciar Jogos</button>
+                    <button id="btnGerenciarComputadores">Gerenciar Computadores</button>
+                    <button id="btnGerenciarEmpregados">Gerenciar Empregados</button>
+                </ul>
+            </section>
+
+            <section id="sectionJogos" style="display: none">
+                <input type="button" value="Voltar" id="btnVoltar" onclick="voltarPagInicial()">
+                <h1>Gerenciamento de Jogos</h1>
+                <p style="font-weight:bold" id="paragrafoMensagemJogos"></p>
+                
+                <input type="text" id="campeonatoInput" class="inputText" placeholder="Digite as letras iniciais do campeonato">
+                <button onclick="buscarJogosCampeonato()" class="botao">Buscar</button>
+                
+                <table id="tabelaJogos">
+                    <input type="button" value="Novo" onclick="novoJogo()" id="btnNovoJogo" class="botao">
+                    <table class="camp" id ="listaJogos">
+                        <tr>
+                            <th>ID</th>
+                            <th>Campeonato</th>
+                            <th>Nome do Time A</th>
+                            <th>Nome do Time B</th>
+                            <th>Pontuação do Time A</th>
+                            <th>Pontuação do Time B</th>
+                            <th>Empregado</th>
+                            <th>Computador</th>
+                        </tr>
+                        <tbody id="corpoTabelaJogos"> </tbody>
+                    </table>
+                </table>
+
+                <table id="tabelaFormularioJogos">
+                    <tr>
+                        <td>ID:</td>
+                        <td><input type="text" id="txtIdJogo" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Campeonato:</td>
+                        <td><input type="text" id="txtCampeonato" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Nome do Time A:</td>
+                        <td><input type="text" id="txtTimeA" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Nome do Time B:</td>
+                        <td><input type="text" id="txtTimeB" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Pontuação do Time A:</td>
+                        <td><input type="text" id="txtGolsTimeA" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Pontuação do Time B:</td>
+                        <td><input type="text" id="txtGolsTimeB" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Empregado</td>
+                        <td><select id="selectEmpregado" class="inputText"></select></td>
+                    </tr>
+                    <tr>
+                        <td>Computador</td>
+                        <td><select id="selectComputador" class="inputText"></select></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Salvar" onclick="salvarJogo()" id="btnSalvarJogo" class="botao">
+                            <input type="button" value="Apagar" onclick="apagarJogo()" id="btnApagarJogo" class="botao">
+                            <input type="button" value="Cancelar" onclick="cancelarEdicaoJogo()" id="btnCancelarJogo"
+                                class="botao">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="sectionEmpregados" style="display: none">
+                <input type="button" value="Voltar" id="btnVoltar" onclick="voltarPagInicial()">
+                <h1>Gerenciamento de Empregados</h1>
+                <p style="font-weight:bold" id="paragrafoMensagemEmpregados"></p>
+                
+                <input type="text" id="cargoInput" class="inputText" placeholder="Digite as letras iniciais do cargo">
+                <button onclick="buscarEmpregadosCargo()" class="botao">Buscar</button>
+                
+                <table id="tabelaEmpregados">
+                    <input type="button" value="Novo" onclick="novoEmpregado()" id="btnNovoEmpregado" class="botao">
+                    <table class="camp">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                            <th>Salário</th>
+                        </tr>
+                        <tbody id="corpoTabelaEmpregados"> </tbody>
+                    </table>
+                </table>
+
+                <table id="tabelaFormularioEmpregados">
+                    <tr>
+                        <td>ID:</td>
+                        <td><input type="text" id="txtIdEmpregado" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Nome:</td>
+                        <td><input type="text" id="txtNomeEmpregado" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Cargo:</td>
+                        <td><input type="text" id="txtCargoEmpregado" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Salario</td>
+                        <td><input type="text" id="txtSalarioEmpregado" class="inputText"></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Salvar" onclick="salvarEmpregado()" id="btnSalvarEmpregado"
+                                class="botao">
+                            <input type="button" value="Apagar" onclick="apagarEmpregado()" id="btnApagarEmpregado"
+                                class="botao">
+                            <input type="button" value="Cancelar" onclick="cancelarEdicaoEmpregado()"
+                                id="btnCancelarEmpregado" class="botao">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="sectionComputadores" style="display: none">
+                <input type="button" value="Voltar" id="btnVoltar" onclick="voltarPagInicial()">
+                <h1>Gerenciamento de Computadores</h1>
+                <p style="font-weight:bold" id="paragrafoMensagemComputadores"></p>
+                
+                <input type="text" id="marcaInput" class="inputText" placeholder="Digite as letras iniciais da marca">
+                <button onclick="buscarComputadorMarca()" class="botao">Buscar</button>
+                
+                <table id="tabelaComputadores">
+                    <input type="button" value="Novo" onclick="novoComputador()" id="btnNovoComputador" class="botao">
+                    <table class="camp">
+                        <tr>
+                            <th>ID</th>
+                            <th>Marca</th>
+                            <th>Processador</th>
+                            <th>Quantidade de RAM</th>
+                            <th>Tamanho do Disco</th>
+                        </tr>
+                        <tbody id="corpoTabelaComputadores"> </tbody>
+                    </table>
+                </table>
+
+                <table id="tabelaFormularioComputadores">
+                    <tr>
+                        <td>ID:</td>
+                        <td><input type="text" id="txtIdComputador" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Marca:</td>
+                        <td><input type="text" id="txtMarcaComputador" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Processador:</td>
+                        <td><input type="text" id="txtProcessadorComputador" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade de RAM:</td>
+                        <td><input type="text" id="txtQtdRAMComputador" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td>Tamanho do Disco:</td>
+                        <td><input type="text" id="txtTamDiscoComputador" class="inputText"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Salvar" onclick="salvarComputador()" id="btnSalvarComputador"
+                                class="botao">
+                            <input type="button" value="Apagar" onclick="apagarComputador()" id="btnApagarComputador"
+                                class="botao">
+                            <input type="button" value="Cancelar" onclick="cancelarEdicaoComputador()"
+                                id="btnCancelarComputador" class="botao">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+
+
+
+    </main>
+
+    <script src="scripts/gerenciadorInicial.js"></script>
+    <script src="scripts/empregados.js"></script>
+    <script src="scripts/jogos.js"></script>
+    <script src="scripts/computadores.js"></script>
+
+</body>
+
+</html>
